@@ -24,7 +24,7 @@ $client->setScopes(array('https://spreadsheets.google.com/feeds'));
 
 
 if (isset($_GET['code'])) {
-    $client->authenticate();
+    $client->authenticate($_GET['code']);
     print_r(json_decode($client->getAccessToken(), true));
     exit;
 }
